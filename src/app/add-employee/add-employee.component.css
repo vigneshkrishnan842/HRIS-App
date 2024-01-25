@@ -1,8 +1,4 @@
-.summaryText p span{
-    color:black;
-    font-weight: bold;
-}
-.summaryHeading{
+.summaryText p span, .summaryHeading{
     color:black;
     font-weight: bold;
 }
