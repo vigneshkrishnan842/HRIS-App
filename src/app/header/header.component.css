@@ -1,0 +1,19 @@
+.headerBackground{
+  background-color: var(--header-bg-color);
+}
+
+header .branding .nav-link .hrisApp{
+  font-family: "Sofia", sans-serif;
+  font-size: xx-large;
+  color:black;
+}
+
+.header-actions .addEmployee{
+  color: black;
+    font-size: medium;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+.branding:hover, .header-actions :hover{
+  background-image: var(--main-bg-color);
+}

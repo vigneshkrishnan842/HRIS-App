@@ -1,0 +1,123 @@
+<clr-wizard #wizard [(clrWizardOpen)]="wizDisplay" (clrWizardOnCancel) = "toempList()">
+    <clr-wizard-title>Add Employee Details</clr-wizard-title>
+  
+    <clr-wizard-button [type]="'cancel'">Close</clr-wizard-button>
+    <clr-wizard-button [type]="'previous'">Previous</clr-wizard-button>
+    <clr-wizard-button [type]="'next'">Next</clr-wizard-button>
+    <clr-wizard-button [type]="'finish'" (click)="onSubmit()">Submit</clr-wizard-button>
+  
+    <clr-wizard-page [clrWizardPageNextDisabled]="!professionalForm.valid">
+      <ng-template clrPageTitle>Profession Details</ng-template>
+      <form clrForm [formGroup]="professionalForm">
+        <clr-control-container>
+          <label class="clr-required-mark">Employee Name</label>
+          <input clrControl required formControlName="name" name="name" />
+          <clr-control-error *clrIfError="'required'">This is a required field</clr-control-error>
+        </clr-control-container>
+        <clr-control-container>
+          <label class="clr-required-mark">Employee ID</label>
+          <input type="number" clrControl required formControlName="employeeID" name="employeeID" />
+          <clr-control-error *clrIfError="'pattern'; error as err">Please enter a valid employee ID</clr-control-error>
+          <clr-control-error *clrIfError="'required'">This is a required field</clr-control-error>          
+        </clr-control-container>
+        <clr-control-container>
+          <label class="clr-required-mark">Email ID</label>
+          <input type="email" clrControl required formControlName="emailID" name="emailID" />
+          <clr-control-error *clrIfError="'required'">This is a required field</clr-control-error>
+          <clr-control-error *clrIfError="'email'">Please enter a valid email address</clr-control-error>
+        </clr-control-container>
+        <clr-control-container>
+          <label class="clr-required-mark">Business Unit</label>
+          <input type="text" clrControl required formControlName="BU" name="BU" />
+          <clr-control-error *clrIfError="'required'">This is a required field</clr-control-error>
+        </clr-control-container>
+      </form>
+    </clr-wizard-page>
+  
+    <clr-wizard-page [clrWizardPageNextDisabled]="!formPageTwo.valid">
+      <ng-template clrPageTitle>Personal Information</ng-template>
+      <ng-template clrPageNavTitle>Personal Information</ng-template>
+      <form #formPageTwo="ngForm">
+        <clr-input-container>
+          <label class="clr-required-mark">Personal Email ID</label>
+          <input type="email" clrInput required [(ngModel)]="NewEmployeeModel.Personal.emailID" name="emailID" />
+          <clr-control-error>This field is required!</clr-control-error>
+        </clr-input-container>
+        <clr-radio-container clrInline>
+          <label class="clr-required-mark">Gender</label>
+          <clr-radio-wrapper>
+            <input type="radio" clrRadio name="Gender" required value="Male" [(ngModel)]="NewEmployeeModel.Personal.Gender" />
+            <label>Male</label>
+          </clr-radio-wrapper>
+          <clr-radio-wrapper>
+            <input type="radio" clrRadio name="Gender" required value="Female" [(ngModel)]="NewEmployeeModel.Personal.Gender" />
+            <label>Female</label>
+          </clr-radio-wrapper>
+          <clr-control-error>This field is required!</clr-control-error>
+        </clr-radio-container>
+        <clr-radio-container clrInline>
+          <label class="clr-required-mark">Marital Status</label>
+          <clr-radio-wrapper>
+            <input type="radio" clrRadio name="Marital" required value="Married" [(ngModel)]="NewEmployeeModel.Personal.MaritalStatus" />
+            <label>Married</label>
+          </clr-radio-wrapper>
+          <clr-radio-wrapper>
+            <input type="radio" clrRadio name="Marital" required value="Unmarried" [(ngModel)]="NewEmployeeModel.Personal.MaritalStatus" />
+            <label>Unmarried</label>
+          </clr-radio-wrapper>
+          <clr-control-error>This field is required!</clr-control-error>
+       </clr-radio-container>
+        <clr-input-container>
+          <label class="clr-required-mark">Previous Company Name</label>
+          <input type="text" clrInput required [(ngModel)]="NewEmployeeModel.Personal.Previous_Company_Name" name="Previous_Company_Name">
+          <clr-control-error>This field is required!</clr-control-error>
+        </clr-input-container>
+      </form>
+  </clr-wizard-page>
+    <clr-wizard-page [clrWizardPageNextDisabled]="!professionalForm.valid || !formPageTwo.valid">
+      <ng-template clrPageTitle>Summary</ng-template>
+      <ng-template clrPageNavTitle>Summary</ng-template>
+      
+      <div *ngIf="professionalForm.valid && formPageTwo.valid">
+        <p>Please verify your details</p>
+        <h5 class="summaryHeading">Your Professional details</h5>
+        <section class="summaryText">
+          <p>
+            <label>Your name : </label>
+            <span>{{ this.professionalForm.get('name').value }}</span>
+          </p>
+          <p>
+            <label>Your Employee ID : </label>
+            <span>{{ this.professionalForm.get('employeeID').value }}</span>
+          </p>
+          <p>
+            <label>Your Work Email ID : </label>
+            <span>{{ this.professionalForm.get('emailID').value }}</span>
+          </p>
+          <p>
+            <label>Your Business Unit : </label>
+            <span>{{ this.professionalForm.get('BU').value }}</span>
+          </p>
+        </section>
+        <h5 class="summaryHeading">Your Personal details</h5>
+        <section class="summaryText">
+          <p>
+            <label>Your personal email ID : </label>
+            <span>{{ this.NewEmployeeModel.Personal.emailID }}</span>
+          </p>
+          <p>
+            <label>Your Gender : </label>
+            <span>{{ this.NewEmployeeModel.Personal.Gender }}</span>
+          </p>
+          <p>
+            <label>Your Marital Status : </label>
+            <span>{{ this.NewEmployeeModel.Personal.MaritalStatus }}</span>
+          </p>
+          <p>
+            <label>Your previous company : </label>
+            <span>{{ this.NewEmployeeModel.Personal.Previous_Company_Name }}</span>
+          </p>
+        </section>
+      </div>
+    </clr-wizard-page>
+  </clr-wizard>

@@ -1,0 +1,45 @@
+<clr-datagrid [(clrDgSelected)]="selected">
+    <clr-dg-column>Employee Name</clr-dg-column>
+    <clr-dg-column>Employee ID</clr-dg-column>
+    <clr-dg-column>Email ID</clr-dg-column>
+    <clr-dg-column>Business Unit</clr-dg-column>
+  
+    <clr-dg-row *ngFor="let employee of employeesData" [clrDgItem]="employee">
+      <clr-dg-cell>{{ employee.Professional.name }}</clr-dg-cell>
+      <clr-dg-cell>{{ employee.Professional.employeeID }}</clr-dg-cell>
+      <clr-dg-cell>{{ employee.Professional.emailID}}</clr-dg-cell>
+      <clr-dg-cell>{{ employee.Professional.BU }}</clr-dg-cell>
+    </clr-dg-row>
+
+    <clr-dg-detail *clrIfDetail="let detail">
+        <clr-dg-detail-header>Personal Details</clr-dg-detail-header>
+        <clr-dg-detail-body>
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th>Email ID</th>
+                    <th>Gender</th>
+                    <th>Marital Status</th>
+                    <th>Previous Company name</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>{{ detail.Personal.emailID }}</td>
+                    <td>{{ detail.Personal.Gender }}</td>
+                    <td>{{ detail.Personal.MaritalStatus }}</td>
+                    <td>{{ detail.Personal.Previous_Company_Name }}</td>
+                  </tr>
+                </tbody>
+            </table>
+        </clr-dg-detail-body>
+    </clr-dg-detail>
+  
+    <clr-dg-footer>
+        <clr-dg-pagination #pagination [clrDgPageSize]="10">
+            <clr-dg-page-size [clrPageSizeOptions]="[10, 20, 50, 100]">Employees per page</clr-dg-page-size>
+            {{ pagination.firstItem + 1 }} - {{ pagination.lastItem + 1 }} of {{ pagination.totalItems }} employees
+          </clr-dg-pagination>
+    </clr-dg-footer>
+  </clr-datagrid>
+  <span *ngFor="let user of selected">{{ user.name }}</span>

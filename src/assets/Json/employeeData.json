@@ -1,0 +1,44 @@
+[
+    {
+        "Professional": {
+            "name": "Sourav",
+            "employeeID": 123,
+            "emailID": "Sourav@dell.com",
+            "BU": "ISG"
+        },
+        "Personal": {
+            "emailID": "Sourav@gmail.com",
+            "Gender": "Male",
+            "MaritalStatus": "Married",
+            "Previous_Company_Name": "Cisco"
+        }
+    },
+    {
+        "Professional": {
+            "name": "Reshma",
+            "employeeID": 456,
+            "emailID": "reshma@dell.com",
+            "BU": "HR"
+        },
+        "Personal": {
+            "emailID": "reshma@gmail.com",
+            "Gender": "Female",
+            "MaritalStatus": "Married",
+            "Previous_Company_Name": "HP"
+        }
+    },
+    {
+        "Professional": {
+            "name": "Sanju",
+            "employeeID": 843,
+            "emailID": "Sanju@dell.com",
+            "BU": "CPG"
+        },
+        "Personal": {
+            "emailID": "Sanju@gmail.com",
+            "Gender": "Female",
+            "MaritalStatus": "Unmarried",
+            "Previous_Company_Name": "Juniper Networks"
+        }
+    }
+]

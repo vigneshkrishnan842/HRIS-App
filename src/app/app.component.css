@@ -1,0 +1,9 @@
+.container{
+    max-width: 120rem;
+  min-height: 30rem;
+  margin: 4vw;
+  background-color: #fff;
+  border-radius: 9px;
+  overflow: hidden;
+  box-shadow: 0 2rem 6rem .5rem rgba(97,85,81,.2);
+}

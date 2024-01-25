@@ -1,1 +1,31 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --main-bg-color: linear-gradient(to right bottom,#13edd7,#348ceb);
+  --header-bg-color :#e6f5f4;
+}
+
+body{
+    /*background-image: linear-gradient(to right bottom,#fbdb89,#f48982);*/
+    background-image: var(--main-bg-color);
+    background-size: cover;
+  background-repeat: no-repeat;
+  min-height: calc(100vh - 8vw)
+}
+
+
+@media screen and (max-width: 768px) {
+  .clr-wizard {
+    .modal-dialog {
+      height: 100% !important;
+      width: 100% !important;
+    }
+
+    .modal-content {
+      min-width: 100%;
+    }
+
+    .modal-nav.clr-wizard-stepnav-wrapper {
+      display: none;
+    }
+  }
+}
