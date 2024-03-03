@@ -8,12 +8,12 @@ header .branding .nav-link .hrisApp{
   color:black;
 }
 
-.header-actions .addEmployee{
+.header-actions .addEmployee,.header-actions .TA{
   color: black;
     font-size: medium;
     font-family: sans-serif;
     font-weight: bold;
 }
-.branding:hover, .header-actions :hover{
+.branding:hover, .TA:hover, .addEmployee:hover{
   background-image: var(--main-bg-color);
 }

@@ -1,0 +1,31 @@
+<select class="dropDown" (change)="init()" [(ngModel)]="recruiter">
+    <!--<option value="" disabled selected>Filter By Continent</option>-->
+    <!-- <option value="all">all</option> -->
+    <option *ngFor="let recName of recNames" value="{{ recName }}">
+    {{recName }}
+    </option>
+  </select>
+  <div class="gridWrapper">
+    <div class="gridItem">
+      <h5 class="tileHeading">Diversity %</h5>
+      <hr>
+      <p class="tileValue">{{diversitypercent}}</p>
+    </div>
+    <div class="gridItem">
+      <h5 class="tileHeading">Referral %</h5>
+      <hr>
+      <p class="tileValue">{{referralpercent}}</p>
+    </div>
+    <div class="gridItem">
+      <h5 class="tileHeading">Offer to Join %</h5>
+      <hr>
+      <p class="tileValue">{{joinpercent}}</p>
+    </div>
+    <div class="gridItem">
+      <h5 class="tileHeading">Recruiter</h5>
+      <hr>
+      <p class="tileValue">{{recruiter}}</p>
+    </div>
+  </div>
+  <h2>Offers by L5 leaders</h2>
+<figure id="bar"></figure>

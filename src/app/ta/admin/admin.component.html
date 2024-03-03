@@ -1,0 +1,11 @@
+<p class="uploadHeading">
+	Please upload the data file
+</p>
+<div class="uploadBtn">
+<input type="file" (change)="onFileChange($event)" />
+</div>
+<div id="output"></div>
+<br>
+<div *ngIf="willDownload">
+	<a id="download"> Download JSON File </a>
+</div>

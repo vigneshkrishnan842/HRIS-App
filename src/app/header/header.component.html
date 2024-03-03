@@ -1,6 +1,6 @@
 <header class="header-6 headerBackground">
   <div class="branding">
-    <a href="..." class="nav-link">
+    <a routerLink="employee-list" class="nav-link">
       <span class="title hrisApp">HRIS</span>
     </a>
   </div>
@@ -10,6 +10,15 @@
     </label>
   </form>
   <div class="header-actions">
-    <a href="#" class="nav-link nav-text addEmployee">Add Employee</a>
+    <div *ngIf="currentState==='employeeList'">
+      <a routerLink="TA" class="nav-link nav-text TA">TA</a>
+      <a routerLink="add-employee" class="nav-link nav-text addEmployee">Add Employee</a>
+    </div>
+    <div *ngIf="currentState==='TA'">
+      <a routerLink="TA/admin" class="nav-link nav-text TA">Admin</a>
+      <a routerLink="TA/recruiter" class="nav-link nav-text TA">Recruiter</a>
+      <a routerLink="TA/TAManager" class="nav-link nav-text addEmployee">TA Manager</a>
+      <!-- <a routerLink="TA/regionalHead" class="nav-link nav-text addEmployee">Regional Head</a> -->
+    </div>
   </div>
 </header>

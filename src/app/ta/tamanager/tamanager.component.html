@@ -1,0 +1,45 @@
+<select class="dropDown" (change)="init()" [(ngModel)]="taManager">
+    <option *ngFor="let taManagerName of taManagerNames" value="{{ taManagerName }}">
+    {{taManagerName }}
+    </option>
+  </select>
+  <div class="gridWrapper">
+    <div class="gridItem">
+      <h5 class="tileHeading">Diversity %</h5>
+      <hr>
+      <p class="tileValue">{{diversitypercent}}</p>
+    </div>
+    <div class="gridItem">
+      <h5 class="tileHeading">Referral %</h5>
+      <hr>
+      <p class="tileValue">{{referralpercent}}</p>
+    </div>
+    <div class="gridItem">
+      <h5 class="tileHeading">Offer to Join %</h5>
+      <hr>
+      <p class="tileValue">{{joinpercent}}</p>
+    </div>
+    <div class="gridItem">
+      <h5 class="tileHeading">TA Manager</h5>
+      <hr>
+      <p class="tileValue">{{taManager}}</p>
+    </div>
+  </div>
+  <table>
+    <tr>
+      <th>Recruiter</th>
+      <th>Diversity %</th>
+      <th>Referral %</th>
+      <th>Offer to Join Ratio</th>
+      <th>Total Offers</th>
+    </tr>
+    
+    <tr *ngFor="let recruiterStat of recruiterStats | keyvalue">
+      <td>{{recruiterStat.key}}</td>
+      <!-- <td *ngFor="let stat of recruiterStat.value| keyvalue">{{stat.value}}</td> -->
+      <td>{{recruiterStat.value['diversityPercentage']}}</td>
+      <td>{{recruiterStat.value['referralPercentage']}}</td>
+      <td>{{recruiterStat.value['OTJRatio']}}</td>
+      <td>{{recruiterStat.value['totalOffers']}}</td>
+    </tr>
+  </table>

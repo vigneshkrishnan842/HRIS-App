@@ -12,6 +12,8 @@ export class DataServiceService {
   constructor(private http: HttpClient) { }
 
   dataUpdate = new BehaviorSubject<Employee_detail[]>(null);
+  currentStateUpdate = new BehaviorSubject<string>('employeeDetail');
+  JSONDataUpdate = new BehaviorSubject(null);
   getEmployeesData(){
     if (this.employeesData.length === 0) { 
       this.http.get<Employee_detail[]>('assets/Json/employeeData.json').subscribe(data => {

@@ -1,0 +1,21 @@
+input::file-selector-button {
+    padding: 0.5em;
+    border: thin solid grey;
+    border-radius: 5px;
+    color: black;
+    font-size: medium;
+    font-family: sans-serif;
+    background-color: var(--header-bg-color);
+  }
+
+  input[type="file"]::file-selector-button:hover  {
+    background-image: var(--main-bg-color);
+    cursor: pointer;
+}
+.uploadHeading{
+    text-align: center;
+}
+.uploadBtn{
+    text-align: center;
+    margin-top: 2%;
+}

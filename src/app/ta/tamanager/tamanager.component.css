@@ -1,0 +1,55 @@
+.dropDown{
+    float: right;
+    width: 35%;
+    padding: 0.5%;
+    background-color: #f2f7f7;
+    border-radius: 5px;
+    margin-right: 1%;
+    margin-top: 1%;
+}
+
+.gridWrapper{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+    align-content: space-around;
+    justify-content: center;
+    column-gap: 10px;
+    row-gap: 10px;
+    margin-top: 1%;
+}
+.gridItem{
+    width:150px;
+    height: 150px;
+    background-color: var(--header-bg-color);
+    color: black;
+    font-size: medium;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+.gridItem:hover, .dropDown:hover{
+    background-image: var(--main-bg-color);
+  }
+  .tileHeading{
+    text-align: center;
+  }
+  .tileValue{
+    text-align: center;
+  }
+  th,td{
+    /* border : 1px solid black; */
+    text-align: center;
+    padding:0.5%;
+    border-bottom: 1px solid black;
+  }
+  table {
+    margin:auto;
+    margin-top: 10%;
+    margin-bottom:10%;
+    border-radius: 10px;
+    border: 1px solid black;
+  }
+
+  table tr:last-child > td{ 
+    border-bottom: none;
+  }

@@ -12,6 +12,7 @@ export class EmployeeListComponent implements OnInit{
   selected: any;
   constructor(private dataService : DataServiceService){}
   ngOnInit(): void {
+    this.dataService.currentStateUpdate.next('employeeList');
     this.dataService.getEmployeesData();
     this.dataService.dataUpdate.subscribe(data => this.employeesData = data);
 }
